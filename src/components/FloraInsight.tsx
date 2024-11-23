@@ -7,13 +7,13 @@ interface FloraInsightProps {
 
 const FloraInsight: React.FC<FloraInsightProps> = ({ text }) => {
     // Split the text into sentences based on common punctuation
-    const sentences = text.split(/(?<=[.?!])\s+/);
+    const sentences = text.split(/(?<=[-?!])\s+/);
 
     return (
         <div className="bg-white py-10 px-20 text-center font-playfair text-black-700">
             
             {sentences.map((sentence, index) => (
-                <h5 key={index} className="text-xl py-2">
+                <h5 key={index} className="text-lg py-2">
                     {sentence.trim()}
                 </h5>
             ))}

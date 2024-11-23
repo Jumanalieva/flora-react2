@@ -1,14 +1,14 @@
 import React from 'react';
-import BlogDisplay from '../components/BlogDisplay'; // Adjust if using a specific display component
-import Footer from '../components/Footer'; // Replace Layout with Footer
-import { useCultureData } from '../custom_hooks/useCultureData'; // Adjusted to use CultureData hook
+import BlogDisplay from '../components/BlogDisplay';
+import Layout from '../components/Layout'; // Properly use Layout
+import { useCultureData } from '../custom_hooks/useCultureData';
 
 const IndustryDisplay: React.FC = () => {
     const { cultureData, loading, error } = useCultureData(1); // Fetch culture data with ID 1
 
     return (
-        <div className="flex flex-col min-h-screen">
-            {/* Page Content with padding for the navbar */}
+        <Layout>
+            {/* Page Content */}
             <div className="pt-20 flex-grow">
                 {loading && <p className="text-center">Loading...</p>}
                 {error && <p className="text-center text-red-500">Error: {error}</p>}
@@ -16,9 +16,7 @@ const IndustryDisplay: React.FC = () => {
                     <BlogDisplay blogData={cultureData} /> // Use the culture data here
                 )}
             </div>
-            {/* Footer Section */}
-            <Footer />
-        </div>
+        </Layout>
     );
 };
 

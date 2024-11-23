@@ -40,7 +40,7 @@ const Navbar = () => {
           {/* Responsive font size for Floral Culture */}
           <Link
             to="/"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-center m-5 font-playfair"
+            className="text-4xl sm:text-4xl lg:text-6xl xl:text-6xl text-center m-5 font-playfair"
           >
             FLORA
           </Link>

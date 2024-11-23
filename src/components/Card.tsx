@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ imageUrl, title, link, isMainFeature = false }) => {
     return (
-        <div className={`relative ${isMainFeature ? 'md:col-span-2 h-full' : 'h-full'}`}>
+        <div className={`relative ${isMainFeature ? 'md:col-span-2 h-[70%]' : 'h-[70%]'}`}>
             {/* Image as Background */}
             <img
                 src={imageUrl}
@@ -21,9 +21,9 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, link, isMainFeature = fals
             {/* Overlay with Centered Text */}
             <Link
                 to={link}
-                className={`absolute  inset-0 flex items-center justify-center text-center ${
-                    isMainFeature ? 'text-black' : 'text-white bg-gray-900 bg-opacity-40'
-                } text-xl  p-4 hover:underline`}
+                className={`absolute inset-0 flex items-center justify-center text-center ${
+                    isMainFeature ? 'text-black' : 'text-white'
+                } text-xl lg:text-3xl xl:text-3xl p-4 hover:underline bg-black bg-opacity-40`} // Add background color and opacity here
             >
                 {title}
             </Link>
@@ -32,4 +32,3 @@ const Card: React.FC<CardProps> = ({ imageUrl, title, link, isMainFeature = fals
 };
 
 export default Card;
-
